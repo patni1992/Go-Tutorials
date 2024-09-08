@@ -1,88 +1,68 @@
 package main
 
-import (
-	"fmt"
-	"math/rand"
-)
+import "fmt"
 
 func main() {
-
-	// if statement
-	goIsAwesome := true
-	if goIsAwesome {
-		fmt.Println("I love Go")
+	// three component for loop
+	for i := 0; i < 10; i++ {
+		fmt.Println(i)
 	}
 
-	// if, else if, else statement
-	language := "Go"
-	if language == "Go" {
-		fmt.Println("Keep rocking")
-	} else if language == "Python" {
-		fmt.Println("Solid choice")
-	} else {
-		fmt.Println("Exploring new languages?")
+	// Skiping initialization in the header
+	i := 0
+	for ; i < 10; i++ {
+		fmt.Println(i)
 	}
 
-	// variable declaration inside if statement
-	foods := []string{"Pizza", "Sushi", "Burger", "Tacos"}
-	if choice := foods[rand.Intn(len(foods))]; choice == "Pizza" {
-		fmt.Println("Pizza is delicious! Great choice.")
-	} else if choice == "Sushi" {
-		fmt.Println("Sushi is a healthy option. Nice!")
-	} else if choice == "Burger" {
-		fmt.Println("Burger is always a good comfort food.")
-	} else {
-		fmt.Println("You like", choice, "which is interesting!")
+	// Skipping the increment in the header
+	for i := 0; i < 10; {
+		fmt.Println(i)
+		if i < 5 {
+			i += 2
+		} else {
+			i += 3
+		}
 	}
 
-	// switch statement
-	day := 6
-	switch day {
-	case 1:
-		fmt.Println("Sunday")
-	case 2:
-		fmt.Println("Monday")
-	case 3:
-		fmt.Println("Tuesday")
-	case 4:
-		fmt.Println("Wednesday")
-	case 5:
-		fmt.Println("Thursday")
-	case 6:
-		fmt.Println("Friday")
-	case 7:
-		fmt.Println("Saturday")
-	default:
-		fmt.Println("Invalid day")
+	// while loop
+	number := 1
+	for number <= 10 {
+		fmt.Println(number)
+		number++
 	}
 
-	fruit := "banana"
+	// infinite loop
+	// for {
+	// 	fmt.Println("This loop will run forever.")
+	// }
 
-	// switch statement with multiple cases
-	switch fruit {
-	case "apple", "cherry":
-		fmt.Println("Red")
-	case "banana", "lemon":
-		fmt.Println("Yellow")
-	case "grape", "plum":
-		fmt.Println("Purple")
-	default:
-		fmt.Println("Unknown color")
+	// break statement
+	for i := 1; i <= 10; i++ {
+		if i == 5 {
+			break // Stops the loop when i reaches 5
+		}
+		fmt.Println(i)
 	}
 
-	temperature := 15
+	// continue statement
+	for i := 1; i <= 10; i++ {
+		if i%2 == 0 {
+			continue // Skips even numbers
+		}
+		fmt.Println(i)
+	}
 
-	// blank switch statement
-	switch {
-	case temperature < 5:
-		fmt.Println("Winter")
-	case temperature >= 5 && temperature < 15:
-		fmt.Println("Autumn")
-	case temperature >= 15 && temperature < 25:
-		fmt.Println("Spring")
-	case temperature >= 25:
-		fmt.Println("Summer")
-	default:
-		fmt.Println("Unusual weather")
+	// range loop
+
+	languages := []string{"Go", "Java", "C", "Python", "Ruby"}
+
+	for i, lang := range languages {
+		fmt.Println(i)
+		fmt.Println(lang)
+	}
+
+	// range loop skipping index
+	for _, lang := range languages {
+		fmt.Println(lang)
 	}
 }
